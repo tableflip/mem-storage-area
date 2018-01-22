@@ -17,5 +17,14 @@
     "ava": "^0.24.0",
     "nyc": "^11.4.1",
     "standard": "^10.0.3"
-  }
+  },
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tableflip/mem-storage-area.git"
+  },
+  "bugs": {
+    "url": "https://github.com/tableflip/mem-storage-area/issues"
+  },
+  "homepage": "https://github.com/tableflip/mem-storage-area#readme"
 }
