@@ -6,6 +6,8 @@
 
 > A WebExtension like StorageArea in memory
 
+https://developer.mozilla.org/en-US/Add-ons/WebExtensions/API/storage
+
 For testing and whatever.
 
 ## Install
