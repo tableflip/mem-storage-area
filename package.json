@@ -1,0 +1,21 @@
+{
+  "name": "mem-storage-area",
+  "version": "0.0.0",
+  "description": "A WebExtension like StorageArea in memory",
+  "main": "index.js",
+  "scripts": {
+    "test": "standard && nyc --reporter=lcov --reporter=text ava"
+  },
+  "keywords": [
+    "StorageArea",
+    "WebExtension",
+    "memory"
+  ],
+  "author": "Alan Shaw",
+  "license": "MIT",
+  "devDependencies": {
+    "ava": "^0.24.0",
+    "nyc": "^11.4.1",
+    "standard": "^10.0.3"
+  }
+}
