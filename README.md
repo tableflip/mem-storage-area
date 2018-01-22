@@ -43,6 +43,7 @@ const storage = new Storage()
 const Emitter = require('mem-storage-area/Emitter')
 const onChanged = new Emitter()
 // onChanged.addListener, onChanged.removeListener, onChanged.hasListener etc.
+// To emit, call onChanged(arg0, arg1...)
 
 // If you need a storage area (with optional emitter)
 const StorageArea = require('mem-storage-area/StorageArea')
