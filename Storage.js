@@ -2,13 +2,13 @@ const Emitter = require('./Emitter')
 const StorageArea = require('./StorageArea')
 
 function Storage () {
-  const onChange = new Emitter()
+  const onChanged = new Emitter()
 
   return {
-    local: new StorageArea({ name: 'local', onChange }),
-    sync: new StorageArea({ name: 'sync', onChange }),
+    local: new StorageArea({ name: 'local', onChanged }),
+    sync: new StorageArea({ name: 'sync', onChanged }),
     managed: new StorageArea({ name: 'managed', readOnly: true }),
-    onChange
+    onChanged
   }
 }
 

@@ -35,14 +35,14 @@ class StorageArea {
       resolve(oldStore)
     })
     .then((oldStore) => {
-      if (!this._options.onChange) return
+      if (!this._options.onChanged) return
 
       const changes = Object.keys(obj).reduce((changes, key) => {
         changes[key] = { oldValue: oldStore[key], newValue: obj[key] }
         return changes
       }, {})
 
-      this._options.onChange(changes, this._options.name)
+      this._options.onChanged(changes, this._options.name)
     })
   }
 
@@ -66,14 +66,14 @@ class StorageArea {
       resolve(oldStore)
     })
     .then((oldStore) => {
-      if (!this._options.onChange) return
+      if (!this._options.onChanged) return
 
       const changes = (Array.isArray(arg) ? arg : [arg]).reduce((changes, key) => {
         changes[key] = { oldValue: oldStore[key], newValue: undefined }
         return changes
       }, {})
 
-      this._options.onChange(changes, this._options.name)
+      this._options.onChanged(changes, this._options.name)
     })
   }
 
@@ -88,14 +88,14 @@ class StorageArea {
       resolve(oldStore)
     })
     .then((oldStore) => {
-      if (!this._options.onChange) return
+      if (!this._options.onChanged) return
 
       const changes = Object.keys(oldStore).reduce((changes, key) => {
         changes[key] = { oldValue: oldStore[key], newValue: undefined }
         return changes
       }, {})
 
-      this._options.onChange(changes, this._options.name)
+      this._options.onChanged(changes, this._options.name)
     })
   }
 
