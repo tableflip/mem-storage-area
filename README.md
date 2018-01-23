@@ -51,3 +51,15 @@ const onChanged = new Emitter()
 const StorageArea = require('mem-storage-area/StorageArea')
 const area = new StorageArea({ name: 'myArea', onChanged, readOnly: false })
 ```
+
+## API
+
+See [MDN storage API docs](https://developer.mozilla.org/en-US/Add-ons/WebExtensions/API/storage)
+
+## Contribute
+
+Feel free to dive in! [Open an issue](https://github.com/tableflip/mem-storage-area/issues/new) or submit PRs.
+
+## License
+
+[MIT](LICENSE) © Alan Shaw
