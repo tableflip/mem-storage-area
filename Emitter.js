@@ -5,17 +5,17 @@ module.exports = function Emitter () {
     listeners.forEach(l => l.apply(null, arguments))
   }
 
-  emitter.addListener = (cb) => {
-    listeners = listeners.concat(cb)
+  emitter.addListener = (listener) => {
+    listeners = listeners.concat(listener)
     return emitter
   }
 
-  emitter.removeListener = (cb) => {
-    listeners = listeners.filter((l) => l !== cb)
+  emitter.removeListener = (listener) => {
+    listeners = listeners.filter((l) => l !== listener)
     return emitter
   }
 
-  emitter.hasListener = (cb) => listeners.indexOf(cb) > -1
+  emitter.hasListener = (listener) => listeners.indexOf(listener) > -1
 
   return emitter
 }

@@ -1,6 +1,6 @@
 {
   "name": "mem-storage-area",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A WebExtension like StorageArea in memory",
   "main": "index.js",
   "scripts": {

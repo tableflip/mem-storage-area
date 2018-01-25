@@ -71,14 +71,14 @@ test('should emit on change', async (t) => {
         foo: { oldValue: 1, newValue: 2 },
         bar: { oldValue: 2, newValue: 3 }
       })
-      storage.onChange.removeListener(onChange)
-      t.false(storage.onChange.hasListener(onChange))
+      storage.onChanged.removeListener(onChange)
+      t.false(storage.onChanged.hasListener(onChange))
       resolve()
     }
 
-    storage.onChange.addListener(onChange)
+    storage.onChanged.addListener(onChange)
 
-    t.true(storage.onChange.hasListener(onChange))
+    t.true(storage.onChanged.hasListener(onChange))
 
     storage.local.set({ foo: 2, bar: 3 })
   })
