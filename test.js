@@ -31,11 +31,30 @@ test('should get with defaults', async (t) => {
   t.is(baz, 'boz')
 })
 
+test('should get all', async (t) => {
+  const storage = new Storage()
+
+  await storage.local.set({ foo: 'bar', baz: 'boz' })
+  const data = await storage.local.get()
+
+  t.deepEqual(data, { foo: 'bar', baz: 'boz' })
+})
+
 test('should not get from read-only', async (t) => {
   const storage = new Storage()
   await t.throws(storage.managed.set({ foo: 'bar' }))
   await t.throws(storage.managed.remove('foo'))
   await t.throws(storage.managed.clear())
+})
+
+test('should be able to set undefined to delete', async (t) => {
+  const storage = new Storage()
+  await storage.local.set({ foo: 'bar' })
+  let res = await storage.local.get('foo')
+  t.is(res.foo, 'bar')
+  await storage.local.set({ foo: undefined })
+  res = await storage.managed.get('foo')
+  t.is(res.foo, undefined)
 })
 
 test('should emit on change', async (t) => {
